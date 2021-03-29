@@ -1,0 +1,6 @@
+Credentials cache: API:78321001-052B-4D3C-A0F3-E2B525A1D393
+        Principal: mleblanc@42QUEBEC.COM
+
+  Issued                Expires               Principal
+Mar  8 09:13:34 2021  Mar  8 19:13:34 2021  krbtgt/42QUEBEC.COM@42QUEBEC.COM
+Mar  8 09:13:36 2021  Mar  8 19:13:34 2021  HTTP/student-storage.42quebec.com@42QUEBEC.COM
