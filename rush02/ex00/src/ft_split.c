@@ -16,13 +16,11 @@
 
 unsigned int	ft_count_words(char *str, char d)
 {
-	char			*w_start;
 	unsigned int	count;
 	int				in_word;
 
 	in_word = 0;
 	count = 0;
-	w_start = str;
 	while (*str)
 	{
 		if (in_word && *str == d)

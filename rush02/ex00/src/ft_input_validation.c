@@ -16,10 +16,12 @@
 
 int	ft_is_input_valid(char *input)
 {
-	int	sign;
+	int				sign;
+	unsigned int	len;
 
 	sign = 1;
-	if (ft_strlen(input) == 0)
+	len = ft_strlen(input);
+	if (len == 0)
 		return (0);
 	while (*input == '+' || *input == '-')
 	{
@@ -31,6 +33,8 @@ int	ft_is_input_valid(char *input)
 		return (0);
 	while (*input >= '0' && *input <= '9')
 		input++;
+	if (len > 0 && (*(input - 1) < '0' || *(input - 1) > '9'))
+		return (0);
 	return (*input == '\0');
 }
 

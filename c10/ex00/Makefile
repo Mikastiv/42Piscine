@@ -5,26 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mleblanc <mleblanc@student.42quebec>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/03/27 11:05:47 by mleblanc          #+#    #+#              #
-#    Updated: 2021/03/27 11:05:49 by mleblanc         ###   ########.fr        #
+#    Created: 2021/03/29 12:52:58 by mleblanc          #+#    #+#              #
+#    Updated: 2021/03/30 11:55:25 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= $(wildcard src/*.c)
+SRCS	= main.c
 OBJS	= $(SRCS:.c=.o)
-INCS	= includes
-NAME	= rush-02
-CC		= cc
-CFLAGS	= -Wall -Werror -Wextra
+NAME	= ft_display_file
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 
 .c.o:
-			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I$(INCS)
+			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-$(NAME):	$(OBJS)
+all:		$(OBJS)
 			$(CC) $(OBJS) -o $(NAME)
-
-all:		$(NAME)
 
 clean:
 			$(RM) $(OBJS)
@@ -32,4 +29,6 @@ clean:
 fclean:		clean
 			$(RM) $(NAME)
 
-.PHONY:		all clean fclean
+re:			fclean all
+
+.PHONY:		all clean fclean re

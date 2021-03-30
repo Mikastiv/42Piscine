@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 11:50:30 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/03/28 19:41:32 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/03/29 10:33:39 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,10 @@ int	main(int argc, char	**argv)
 		return (0);
 	}
 	if (!ft_main_delegate(dict, input))
+	{
 		ft_putstr("Dict Error\n");
+		return (0);
+	}
 	ft_putstr("\n");
 	ft_free_dict(dict);
 }

@@ -5,26 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mleblanc <mleblanc@student.42quebec>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/03/27 11:05:47 by mleblanc          #+#    #+#              #
-#    Updated: 2021/03/27 11:05:49 by mleblanc         ###   ########.fr        #
+#    Created: 2021/03/29 12:52:58 by mleblanc          #+#    #+#              #
+#    Updated: 2021/03/30 12:04:24 by mleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= $(wildcard src/*.c)
+SRCS	= src/main.c src/ft_tail.c src/ft_string.c src/ft_file.c src/ft_atoi.c src/ft_mem.c src/ft_tail2.c
 OBJS	= $(SRCS:.c=.o)
+NAME	= ft_tail
 INCS	= includes
-NAME	= rush-02
-CC		= cc
-CFLAGS	= -Wall -Werror -Wextra
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 
 .c.o:
 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I$(INCS)
 
-$(NAME):	$(OBJS)
+all:		$(OBJS)
 			$(CC) $(OBJS) -o $(NAME)
-
-all:		$(NAME)
 
 clean:
 			$(RM) $(OBJS)
@@ -32,4 +30,6 @@ clean:
 fclean:		clean
 			$(RM) $(NAME)
 
-.PHONY:		all clean fclean
+re:			fclean all
+
+.PHONY:		all clean fclean re
