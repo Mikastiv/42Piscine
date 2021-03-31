@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 10:40:33 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/03/31 13:33:41 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/03/31 15:45:14 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/03/31 15:46:29 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "ft_atoi.h"
+#include "ft_string.h"
+
+int	ft_atoi(char *str)
 {
-	while (n > 0)
+	int	rtn;
+	int	len;
+
+	rtn = 0;
+	len = ft_strlen(str);
+	while (*str >= '0' && *str <= '9' && len >= 4)
 	{
-		if (*s1 != *s2)
-			return ((*(unsigned char *)s1 - *(unsigned char *)s2));
-		if (*s1 == '\0')
-			break ;
-		s1++;
-		s2++;
-		n--;
+		rtn = (rtn * 10) + (*str - '0');
+		len--;
+		str++;
 	}
-	return (0);
+	return (rtn);
 }

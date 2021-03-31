@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 13:14:15 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/03/29 11:11:18 by mleblanc         ###   ########.fr       */
+/*   Updated: 2021/03/31 10:18:04 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_op_index(char op)
 	if (op == '-')
 		return (1);
 	if (op == '*')
-		return (2); 
+		return (2);
 	if (op == '/')
 		return (3);
 	return (4);

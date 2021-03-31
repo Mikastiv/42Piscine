@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_mem.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 10:40:33 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/03/31 13:33:41 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/03/30 14:12:58 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/03/30 14:13:44 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "ft_mem.h"
+
+void	ft_memcpy(char *dest, char *src, t_u32 len)
 {
-	while (n > 0)
+	t_u32	i;
+
+	i = 0;
+	while (i < len)
 	{
-		if (*s1 != *s2)
-			return ((*(unsigned char *)s1 - *(unsigned char *)s2));
-		if (*s1 == '\0')
-			break ;
-		s1++;
-		s2++;
-		n--;
+		dest[i] = src[i];
+		i++;
 	}
-	return (0);
 }

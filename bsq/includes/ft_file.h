@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_file.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mleblanc <mleblanc@student.42quebec>       +#+  +:+       +#+        */
+/*   By: ryebadok <ryebadok@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 10:40:33 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/03/31 13:33:41 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/03/29 11:05:29 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/03/29 11:16:09 by ryebadok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	while (n > 0)
-	{
-		if (*s1 != *s2)
-			return ((*(unsigned char *)s1 - *(unsigned char *)s2));
-		if (*s1 == '\0')
-			break ;
-		s1++;
-		s2++;
-		n--;
-	}
-	return (0);
-}
+#ifndef FT_FILE_H
+# define FT_FILE_H
+
+# include <unistd.h>
+
+ssize_t	ft_file_size(char *filename);
+char	*ft_read_file(char *filename);
+
+#endif

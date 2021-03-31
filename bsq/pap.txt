@@ -1,0 +1,7 @@
+results/multi_arg_01.txt
+results/multi_arg_02.txt
+results/stdin_01.txt
+results/stdin_03.txt
+results/stdin_04.txt
+results/test_100_full.txt
+results/test_1_full.txt

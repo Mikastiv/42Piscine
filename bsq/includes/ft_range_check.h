@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_range_check.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 10:40:33 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/03/31 13:33:41 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/03/31 10:42:23 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/03/31 13:40:41 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#ifndef FT_RANGE_CHECK_H
+# define FT_RANGE_CHECK_H
+
+# include "ft_stdint.h"
+# include "ft_map.h"
+
+typedef struct s_range
 {
-	while (n > 0)
-	{
-		if (*s1 != *s2)
-			return ((*(unsigned char *)s1 - *(unsigned char *)s2));
-		if (*s1 == '\0')
-			break ;
-		s1++;
-		s2++;
-		n--;
-	}
-	return (0);
-}
+	t_u32	min;
+	t_u32	max;
+}	t_range;
+
+int	ft_is_vrange_valid(t_map *map, t_range range, t_u32 col);
+int	ft_is_hrange_valid(t_map *map, t_range range, t_u32 row);
+int	valid_row(t_map *map, t_u32 row, t_u32 col, t_u32 i);
+int	valid_col(t_map *map, t_u32 row, t_u32 col, t_u32 i);
+
+#endif

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_solution.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 10:40:33 by mleblanc          #+#    #+#             */
-/*   Updated: 2021/03/31 13:33:41 by mleblanc         ###   ########.fr       */
+/*   Created: 2021/03/31 13:44:35 by mleblanc          #+#    #+#             */
+/*   Updated: 2021/03/31 14:05:28 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#ifndef FT_SOLUTION_H
+# define FT_SOLUTION_H
+
+# include "ft_stdint.h"
+
+typedef struct s_solution
 {
-	while (n > 0)
-	{
-		if (*s1 != *s2)
-			return ((*(unsigned char *)s1 - *(unsigned char *)s2));
-		if (*s1 == '\0')
-			break ;
-		s1++;
-		s2++;
-		n--;
-	}
-	return (0);
-}
+	t_u32	sq_size;
+	t_u32	start_idx;
+}	t_solution;
+
+int	ft_update_sol(t_solution *sol, t_u32 min, t_u32 max, t_u32 index);
+
+#endif
